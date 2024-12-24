@@ -9,9 +9,10 @@ import Logo from "../assets/logo.png";
 
 export function LoginForm({
   className,
+  selectedMode,
+  setSelectedMode,
   ...props
-}: React.ComponentPropsWithoutRef<"form">) {
-  const [selectedMode, setSelectedMode] = useState<"saas" | "self-hosted">("saas");
+}: React.ComponentPropsWithoutRef<"form"> & { selectedMode: "saas" | "self-hosted"; setSelectedMode: React.Dispatch<React.SetStateAction<"saas" | "self-hosted">>; }) {
 
   return (
     <form

@@ -7,22 +7,23 @@ export default function LoginPage() {
   const [selectedMode, setSelectedMode] = useState<"saas" | "self-hosted">("saas");
 
   return (
-    <div className="grid lg:grid-cols-2 bg-white-100 w-full">
+    <div className="grid lg:grid-cols-2 gap-5 w-screen h-screen">
+
       <div className="relative hidden lg:block">
         {/* Conditionally render DashboardCards */}
         {selectedMode === "saas" ? (
-       <div className="flex flex-col gap-10">
-         <div style={{marginBottom:'80px'}}><DashboardCard /></div>
-         <DashboardCard />
+       <div className="flex flex-col gap-10" style={{alignItems:'center',alignContent:'center',marginTop:'10%',marginBottom:'10%'}}>
+         <div style={{marginBottom:'80px', width:'max-content'}}><DashboardCard /></div>
+         <div style={{width:'max-content'}}><DashboardCard /></div>
        </div>
        
         ) : (
-          <DashboardCard />
+          <div className="mx-auto" style={{width:'max-content',marginTop:'30%'}}><DashboardCard /></div>
         )}
       </div>
       <div className="flex flex-col gap-2 p-2 bg-gray-100">
-        <div className="flex flex-1 items-center justify-center">
-          <div className="w-full max-w-xs">
+      <div className="flex flex-1 items-center mx-auto justify-center w-full lg:w-[80%]">
+          <div className="w-full">
             <LoginForm selectedMode={selectedMode} setSelectedMode={setSelectedMode} />
           </div>
         </div>

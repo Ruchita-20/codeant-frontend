@@ -20,7 +20,7 @@ export function LoginForm({
       {...props}
       onSubmit={(e) => e.preventDefault()} // Prevent form submission
     >
-      <div className="flex flex-col items-center gap-2 text-center bg-white min-w-[max-content]">
+      <div className="flex flex-col items-center gap-2 text-center bg-white min-w-[max-content] shadow-md rounded-lg">
         <div className="flex flex-col items-center gap-2 text-center">
           <div className="flex justify-center gap-2 md:justify-start py-5">
             <a href="#" className="flex items-center gap-2 text-2xl font-satoshi">
@@ -32,29 +32,30 @@ export function LoginForm({
         </div>
 
         {/* Mode Toggle Buttons */}
-        <div className="flex justify-center  border-b pb-6 px-3 pt-4">
-          <button
-            className={cn(
-              "w-[145px] py-2 px-2 rounded-md text-white font-medium",
-              selectedMode === "saas" ? "bg-[#1570EF]" : "bg-white-200 text-gray-700"
-            )}
-            onClick={() => setSelectedMode("saas")}
-          >
-            SaaS
-          </button>
-          <button
-            className={cn(
-              "w-[145px] py-2 px-2 rounded-md text-white font-medium",
-              selectedMode === "self-hosted" ? "bg-[#1570EF]" : "bg-white-200 text-gray-700"
-            )}
-            onClick={() => setSelectedMode("self-hosted")}
-          >
-            Self-Hosted
-          </button>
-        </div>
+        <div className="grid grid-cols-2 border-b pb-6 px-3 pt-4 w-full lg:px-6">
+  <button
+    className={cn(
+      "w-full py-2 px-2 rounded-md text-white font-medium",
+      selectedMode === "saas" ? "bg-[#1570EF]" : "bg-white-200 text-gray-700"
+    )}
+    onClick={() => setSelectedMode("saas")}
+  >
+    SaaS
+  </button>
+  <button
+    className={cn(
+      "w-full py-2 px-2 rounded-md text-white font-medium",
+      selectedMode === "self-hosted" ? "bg-[#1570EF]" : "bg-white-200 text-gray-700"
+    )}
+    onClick={() => setSelectedMode("self-hosted")}
+  >
+    Self-Hosted
+  </button>
+</div>
+
 
         {/* Sign-in Buttons */}
-        <div className="grid gap-6 pt-3 pb-4">
+        <div className="grid gap-6 pt-3 pb-4 px-3 lg:px-6 w-full">
           {selectedMode === "saas" && (
             <Button variant="outline" className="w-full">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

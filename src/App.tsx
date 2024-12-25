@@ -25,7 +25,7 @@ const MainPage = () => {
       <div className='lg:h-90 lg:pr-[calc(100%-80%)]'>
         <Navbar />
       </div>
-      <div className='bg-[#FAFAFA] lg:border-l lg:pl-10'>
+      <div className='bg-[#FAFAFA] lg:border-l lg:pl-10'  style={{paddingTop:'1rem',paddingBottom:'1rem'}}>
         <div className='p-0 bg-white border-0 lg:p-10 lg:border lg:rounded-lg'>
           <Repo />
         </div>

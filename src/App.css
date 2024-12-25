@@ -3,3 +3,8 @@
   margin: 0 20;
   text-align: center;
 }
+@media (max-width: 768px) { /* Adjust max-width based on your mobile breakpoint */
+  #root {
+    padding: 1rem;
+  }
+}
